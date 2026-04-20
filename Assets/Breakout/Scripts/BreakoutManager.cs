@@ -26,7 +26,7 @@ public class BreakoutManager : MonoBehaviour
         { n++;
             Debug.Log(n);
         } 
-        //"i" can be replaced with "x" for just being a number, this is how we replaced the x position on transform. this code will help us spawn multiple bricks at once
+        //makes a grid
         for (float y = 0; y <= 3; y+= 0.5f) 
         { 
             for (float x = -7; x <= 7; x +=2)
