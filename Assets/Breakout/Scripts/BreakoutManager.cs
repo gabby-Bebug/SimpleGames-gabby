@@ -22,24 +22,24 @@ public class BreakoutManager : MonoBehaviour
     void Start()
     {
         int n = 0;
-        while (n < 10)
+        while (n < 8)
         { n++;
             Debug.Log(n);
-        }
-        for (int i = 0; i < 10; i++) 
+        } 
+        for (int i = 0; i < 8; i++) 
         { 
             Debug.Log(i);
-            Instantiate(BrickPrefab, new Vector3(Random.Range(-8f, 8f), Random.Range(0f, 3), 0), Quaternion.identity);
+            Instantiate(BrickPrefab, new Vector3(Random.Range(-8f, 8f), 0, 0), Quaternion.identity);
 
         }
-
+         
 
         //I need to register myself as 'the' BreakoutManager
         BreakoutManager.Me = this;
 
         //This is the code for spawning bricks. It's not very good.
         //How could we make this spawn lots of bricks more efficiently?
-        Instantiate(BrickPrefab, new Vector3(Random.Range(-8f,8f), Random.Range(0f,3), 0), Quaternion.identity);
+       
         
     }
 
