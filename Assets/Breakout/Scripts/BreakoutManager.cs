@@ -22,14 +22,14 @@ public class BreakoutManager : MonoBehaviour
     void Start()
     {
         int n = 0;
-        while (n < 8)
+        while (n < 3)
         { n++;
             Debug.Log(n);
         } 
-        for (int i = 0; i < 8; i++) 
+        for (float x = -7; x < 8; x+=2) 
         { 
-            Debug.Log(i);
-            Instantiate(BrickPrefab, new Vector3(Random.Range(-8f, 8f), 0, 0), Quaternion.identity);
+            
+            Instantiate(BrickPrefab, new Vector3(x, 0, 0), Quaternion.identity);
 
         }
          
