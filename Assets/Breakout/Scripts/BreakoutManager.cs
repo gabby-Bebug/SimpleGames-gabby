@@ -26,7 +26,12 @@ public class BreakoutManager : MonoBehaviour
         { n++;
             Debug.Log(n);
         }
-        Debug.Log("DONE");
+        for (int i = 0; i < 3; i++) 
+        { 
+            Debug.Log(i); 
+        }
+
+
         //I need to register myself as 'the' BreakoutManager
         BreakoutManager.Me = this;
 
