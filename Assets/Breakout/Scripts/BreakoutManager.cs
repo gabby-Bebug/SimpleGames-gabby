@@ -26,6 +26,7 @@ public class BreakoutManager : MonoBehaviour
         { n++;
             Debug.Log(n);
         } 
+        //"i" can be replaced with "x" for just being a number, this is how we replaced the x position on transform.
         for (float x = -7; x < 8; x+=2) 
         { 
             
