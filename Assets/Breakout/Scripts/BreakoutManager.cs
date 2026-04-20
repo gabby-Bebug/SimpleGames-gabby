@@ -37,8 +37,8 @@ public class BreakoutManager : MonoBehaviour
 
         //This is the code for spawning bricks. It's not very good.
         //How could we make this spawn lots of bricks more efficiently?
-        Instantiate(BrickPrefab, new Vector3(0, 1, 0), Quaternion.identity);
-        Instantiate(BrickPrefab, new Vector3(0, 1.5f, 0), Quaternion.identity);
+        Instantiate(BrickPrefab, new Vector3(Random.Range(-8,8), Random.Range(0,3), 0), Quaternion.identity);
+        
     }
 
     void Update()
