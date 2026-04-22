@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 public class PlayerScript : MonoBehaviour
 {
+    
+  
     //I like to make variables for all my components even
         //if I'm not sure if I'll use them in code
     public SpriteRenderer SR;
@@ -16,6 +18,7 @@ public class PlayerScript : MonoBehaviour
     public Collider2D Coll;
     public ParticleSystem PS;
     public AudioSource AS;
+    public GameObject GO;
     
     //My personal stats
     public float Speed = 5;
@@ -30,6 +33,10 @@ public class PlayerScript : MonoBehaviour
     
     //My Sound Effects
     public AudioClip JumpSFX;
+
+    //List Stuff
+
+    public List<SpriteRenderer> SRs;
     
     void Start()
     {
@@ -39,6 +46,16 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
+        //turning red homework
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SR.color = Color.red;
+            for (int n = 0; n < SRs.Count; n++)
+            {
+                SRs[n].color = Color.red;
+            }
+
+        }
         //If I'm stunned. . .
         if (Stunned > 0)
         {
@@ -52,11 +69,7 @@ public class PlayerScript : MonoBehaviour
             //Don't run any of the code below, because I'm stunned
             return;
         }
-        //If I hit space, the player turns red
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SR.color = Color.red;
-        }
+        
         //I'll use this variable to track the movement I want
         //By default, I move like I moved last frame
         Vector2 vel = RB.linearVelocity;
