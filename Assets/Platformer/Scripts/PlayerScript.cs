@@ -85,7 +85,11 @@ public class PlayerScript : MonoBehaviour
             //Play my jump sound
             AS.PlayOneShot(JumpSFX);
         }
-
+        //If I hit space, the player turns red
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SR.color = Color.red;
+        }
         //Here I actually feed the Rigidbody the movement I want
         RB.linearVelocity = vel;
         //Use my FacingLeft variable to make my sprite face the right way
