@@ -24,8 +24,9 @@ public class PlayerScript : MonoBehaviour
     public float Speed = 5;
     public float JumpPower = 10;
     public float Gravity = 3;
-    
+
     //Variables I use to track my state
+    public List<GameObject> Touching;
     public bool OnGround = false;
     public bool FacingLeft = false;
       //If this is over 0, I'm stunned and can't move
@@ -126,13 +127,15 @@ public class PlayerScript : MonoBehaviour
     //Can you find the bug?
     public bool CanJump()
     {
-        return OnGround;
+        return Touching.Count > 0;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {  
         //If I collide with something solid, mark me as being on the ground
         OnGround = true;
+       if(!Touching.Contains(other.gameObject))
+            Touching.Add(other.gameObject);
 
         //If what I hit was an enemy. . .
         EnemyScript es = other.gameObject.GetComponent<EnemyScript>();
@@ -154,5 +157,6 @@ public class PlayerScript : MonoBehaviour
     {
         //If I stop touching something solid, mark me as not being on the ground
         OnGround = false;
+        Touching.Remove(other.gameObject);
     }
 }
