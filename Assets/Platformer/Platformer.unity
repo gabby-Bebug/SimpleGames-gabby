@@ -684,7 +684,7 @@ MonoBehaviour:
   EnemyPrefab: {fileID: 5331789129511157764, guid: b1f259c23f0554349949a1b5a1afd829, type: 3}
   SpawnTimer: 0
   SpawnMaxTimer: 3
-  EnemySpawnPos: {x: 0, y: 8, z: 0}
+  EnemySpawnPos: {x: 12, y: 8, z: 0}
   Player: {fileID: 0}
   AllEnemies: []
 --- !u!4 &2089145053
