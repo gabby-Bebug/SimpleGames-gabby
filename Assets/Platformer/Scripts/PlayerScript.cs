@@ -54,7 +54,11 @@ public class PlayerScript : MonoBehaviour
             {
                 SRs[n].color = Color.red;
             }
-
+            //foreach does the same as the for loop
+            foreach(SpriteRenderer sr in SRs)
+            { 
+                sr.color = Color.red;
+            }
         }
         //If I'm stunned. . .
         if (Stunned > 0)
